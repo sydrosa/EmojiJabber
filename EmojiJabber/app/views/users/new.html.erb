@@ -1,0 +1,11 @@
+<img src = "https://cdn.shopify.com/s/files/1/1061/1924/products/Poop_Emoji_7b204f05-eec6-4496-91b1-351acc03d2c7_large.png?v=1480481059">
+<h1> Sign Up Now!</h1>
+
+<%= form_for @user do |f| %>
+<%= f.label :email %><%= f.text_field :email%>
+  <%= f.label :username %><%= f.text_field :username %>
+   <%= f.label :password %><%= f.password_field :password %>
+<%= f.label "Password Confirmation"%><%= f.password_field :password_confirmation%>
+   <%= f.submit "Create User"%>
+   
+<% end %>
