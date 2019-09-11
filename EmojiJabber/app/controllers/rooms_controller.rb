@@ -1,18 +1,21 @@
 class RoomsController < ApplicationController
     def index
+        # byebug
         @rooms = Room.all
     end
 
     def show
         @room = Room.find(params[:id])
+        @favorite = Favorite.new
+
     end
 
     def new
-        @Room = Room.new
+        @room = Room.new
     end
 
     def create
-        @Room = Room.create(favorite_params)
+        @room = Room.create(room_params)
     end
 
 

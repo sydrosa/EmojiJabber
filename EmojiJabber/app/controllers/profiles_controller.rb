@@ -13,9 +13,9 @@ class ProfilesController < ApplicationController
 
     def create
         
-            @user = User.find_by(username: params[:username])
-            return head(:forbidden) unless @user.authenticate(params[:password])
-            profile[:user_id] = @user.id
+        @user = User.find_by(username: params[:username])
+        return head(:forbidden) unless @user.authenticate(params[:password])
+        profile[:user_id] = @user.id
         
     end
 
