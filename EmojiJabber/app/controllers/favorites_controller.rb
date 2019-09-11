@@ -7,14 +7,12 @@ class FavoritesController < ApplicationController
         @favorite = Favorite.find(params[:id])
     end
 
-    def new
-        @favorite = Favorite.new
-    end
-
     def create
+       
         @favorite = Favorite.create(favorite_params)
+        redirect_to room_path(@favorite.room.id)
+        
     end
-
 
     def destroy
         #im not sure with this one yet.
@@ -23,6 +21,7 @@ class FavoritesController < ApplicationController
     private
 
     def favorite_params  
+        
         params.require(:favorite).permit(:room_id, :user_id)
     end
 

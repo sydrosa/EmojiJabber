@@ -1,1 +1,9 @@
 <h1> favorite new page </h1>
+
+
+<%= form_for @favorite do |f|%>
+<%= f.hidden_field :user_id, :value => @user.id %>
+<%= f.hidden_field :room_id, :value => @room.id %>
+<%= link_to "Favorite", root_url %> 
+
+<% end %>
